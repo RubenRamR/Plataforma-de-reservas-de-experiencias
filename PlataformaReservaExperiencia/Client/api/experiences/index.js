@@ -1,6 +1,41 @@
 const express = require('express');
 const router = express.Router();
 const Experience = require('../../models/Experience');
+const authMiddleware = require('../../api/middleware/auth'); // middleware para verificar proveedor
+
+// POST /api/v1/experiences
+router.post('/', authMiddleware, async (req, res) => {
+    try {
+        const user = req.user; // del middleware auth
+
+        // Solo proveedores aprobados pueden crear experiencia
+        if (user.role !== 'Proveedor' || user.status !== 'Aprobado') {
+            return res.status(403).json({ message: 'Prohibido: proveedor no aprobado' });
+        }
+
+        const { name, description, price, date, capacity } = req.body;
+
+        const newExperience = new Experience({
+            name,
+            description,
+            price,
+            date,
+            capacity,
+            spotsAvailable: capacity,
+            provider: {
+                id: user._id,
+                name: user.name,
+                status: user.status
+            }
+        });
+
+        await newExperience.save();
+        res.status(201).json(newExperience);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: 'Error al crear la experiencia' });
+    }
+});
 
 // GET /api/v1/public/experiences -> Lista de experiencias aprobadas con filtros opcionales
 router.get('/', async (req, res) => {
