@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Proveedor</title>
+    <link rel="stylesheet" href="../styles/form.css">
+</head>
+<body>
+
+    <div class="register-container">
+        <h2>Registro de Proveedor</h2>
+        <p>Únete para ofrecer tus experiencias. Tu cuenta requerirá aprobación.</p>
+
+        <form id="register-provider-form">
+            <div class="form-group">
+                <label for="prov-name">Nombre Completo / Empresa</label>
+                <input type="text" id="prov-name" required placeholder="Ej. Turismo Aventura SA">
+            </div>
+
+            <div class="form-group">
+                <label for="prov-email">Correo Electrónico</label>
+                <input type="email" id="prov-email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="prov-password">Contraseña</label>
+                <input type="password" id="prov-password" required minlength="6">
+            </div>
+
+            <button type="submit">Solicitar Registro</button>
+        </form>
+
+        <p>¿Ya tienes cuenta? <a href="login.html">Inicia Sesión aquí</a>.</p>
+    </div>
+
+    <script type="module" src="../components/registroProveedor.js"></script>
+</body>
+</html>
