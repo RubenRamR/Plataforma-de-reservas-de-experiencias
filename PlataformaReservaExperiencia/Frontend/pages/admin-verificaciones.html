@@ -1,0 +1,39 @@
+<!-- Frontend/pages/admin-verificaciones.html -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Panel de Aprobación de Proveedores</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../styles/admin-panel.css" />
+  </head>
+  <body>
+    <div class="admin-container">
+      <header class="admin-header">
+        <h1 id="admin-header-title">Panel de Aprobación</h1>
+        <p>Lista de proveedores con estado "Pendiente" para su verificación.</p>
+      </header>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Rol</th>
+              <th>Estado</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="providers-table-body">
+            <!-- Filas generadas por JS -->
+          </tbody>
+        </table>
+
+        <div id="status" class="status"></div>
+      </div>
+    </div>
+
+    <script type="module" src="../components/adminVerificaciones.js"></script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+/* Frontend/styles/admin-panel.css */
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #f3f4f6;
+  padding: 2rem;
+}
+
+.admin-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.admin-header {
+  margin-bottom: 1.25rem;
+}
+
+.admin-header h1 {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.admin-header p {
+  margin: 0.25rem 0 0;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.table-wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+thead {
+  background: #f9fafb;
+}
+
+th,
+td {
+  padding: 0.6rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  font-weight: 600;
+  color: #374151;
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.9rem;
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.status {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.status.error {
+  color: #b91c1c;
+}
+
+.status.success {
+  color: #15803d;
+}
