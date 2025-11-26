@@ -50,8 +50,8 @@ form.addEventListener("submit", async (e) => {
   try {
     const created = await createExperience(token, payload);
     console.log("Experiencia creada:", created);
-    setStatus("success", "Experiencia creada correctamente.");
-    form.reset();
+    window.location.href = "/proveedor/experiencias.html";
+
   } catch (err) {
     console.error(err);
     if (err.status === 403) {
