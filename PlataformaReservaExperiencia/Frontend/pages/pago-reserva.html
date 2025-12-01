@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pago de Reserva</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../styles/form.css" />
+  </head>
+  <body>
+    <div class="card">
+      <h1>Realizar pago</h1>
+
+      <div id="reservation-info" class="field">
+        <!-- Aquí mostramos la info básica de la reserva -->
+      </div>
+
+      <p class="helper-text">
+        Estás a punto de simular el pago de tu reserva. En un entorno real,
+        aquí se integraría una pasarela externa (Stripe, MercadoPago, etc.).
+      </p>
+
+      <button id="pay-btn" class="btn">Pagar ahora</button>
+
+      <div id="status" class="status"></div>
+    </div>
+
+    <script type="module" src="../components/pagoReserva.js"></script>
+  </body>
+</html>
