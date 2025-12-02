@@ -6,6 +6,7 @@ const authRoutes = require('./api/auth'); // ← Asegúrate que exista este arch
 const experiencesRoutes = require('./api/experiences');
 const adminRoutes = require('./api/admin');
 const paymentsRoutes = require(".api/payments");
+const reservationsRoutes = require('./api/reservations/index');
 
 
 const app = express();
@@ -18,6 +19,7 @@ app.use('/api/v1/experiences', experiencesRoutes);
 app.use('/api/v1/public/experiences', experiencesRoutes);
 app.use('/api/v1/admin', adminRoutes);
 app.use("/api/v1/payments", paymentsRoutes);
+app.use('/api/v1/reservations', reservationsRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));

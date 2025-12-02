@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Experiencia</title>
+    <link rel="stylesheet" href="../styles/form.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Reserva tu Experiencia</h2>
+        
+        <div id="experience-details">
+            <p><strong>Experiencia:</strong> <span id="exp-name">Cargando...</span></p>
+            <p><strong>Precio por persona:</strong> $<span id="exp-price">0</span></p>
+            <p><strong>Cupos disponibles:</strong> <span id="exp-spots">0</span></p>
+        </div>
+
+        <hr>
+
+        <form id="reservation-form">
+            <div class="form-group">
+                <label for="slots">¿Cuántas personas asistirán?</label>
+                <input type="number" id="slots" min="1" value="1" required>
+            </div>
+
+            <button type="submit" id="btn-reservar">Reservar Ahora</button>
+        </form>
+    </div>
+
+    <script type="module" src="../components/iniciarReserva.js"></script>
+
+    <script>
+        // Esto es solo para que no se vea vacío al probar. 
+        // En la versión final, esto vendría de una llamada al Backend (B-04).
+        const params = new URLSearchParams(window.location.search);
+        if(!params.has('id')) {
+            document.body.innerHTML = "<h1>Error: Falta ID de experiencia en URL</h1>";
+        }
+    </script>
+</body>
+</html>
