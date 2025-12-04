@@ -7,6 +7,7 @@ const experiencesRoutes = require('./api/experiences');
 const adminRoutes = require('./api/admin');
 const paymentsRoutes = require(".api/payments");
 const reservationsRoutes = require('./api/reservations/index');
+import publicReservationsRouter from "./api/reservations/publicReservations.routes.js";
 
 
 const app = express();
@@ -23,3 +24,4 @@ app.use('/api/v1/reservations', reservationsRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
+app.use("/api/v1/public/reservations", publicReservationsRouter);

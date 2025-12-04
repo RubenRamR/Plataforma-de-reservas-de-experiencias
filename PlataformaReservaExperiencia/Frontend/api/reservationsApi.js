@@ -23,3 +23,18 @@ export async function createReservation(payload) {
 
   return data;
 }
+
+export async function getReservationsByEmail(email) {
+  const url = `${API_BASE_URL}/public/reservations?email=${encodeURIComponent(email)}`;
+
+  const res = await fetch(url);
+
+  if (!res.ok) {
+    const data = await res.json().catch(() => ({}));
+    const error = new Error(data.message || "Error al obtener reservas");
+    error.status = res.status;
+    throw error;
+  }
+
+  return await res.json();
+}

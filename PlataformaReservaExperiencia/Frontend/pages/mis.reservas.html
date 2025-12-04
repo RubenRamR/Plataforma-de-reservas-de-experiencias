@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Reservas</title>
+
+  <!-- Reutilizamos el estilo del catálogo -->
+  <link rel="stylesheet" href="../styles/form.css">
+  <link rel="stylesheet" href="../styles/admin-panel.css">
+
+  <style>
+    .reservas-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.2rem;
+      padding: 1.5rem;
+    }
+
+    .reserva-card {
+      background: #fff;
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .reserva-card h3 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .reserva-card p {
+      margin: 4px 0;
+    }
+
+    .status-paid {
+      color: #15803d;
+      font-weight: bold;
+    }
+
+    .status-pending {
+      color: #b91c1c;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1 style="text-align:center;">Mis Reservas</h1>
+
+<div class="card" style="max-width:500px; margin:auto;">
+  <div class="field">
+    <label for="emailInput">Ingresa tu correo para consultar tus reservas:</label>
+    <input id="emailInput" type="email" placeholder="tunombre@gmail.com">
+  </div>
+
+  <button class="btn" id="searchBtn">Buscar Reservas</button>
+
+  <div id="statusMsg" class="status"></div>
+</div>
+
+<h2 style="text-align:center; margin-top:1.5rem;">Resultados</h2>
+
+<div id="reservasContainer" class="reservas-container"></div>
+
+<script type="module" src="../components/misReservas.js"></script>
+</body>
+</html>
